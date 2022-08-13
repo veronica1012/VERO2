@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, World! Tratamiento de Datos Veronica </p>"
 
 
 @app.route("/get-price/<ticker>")
