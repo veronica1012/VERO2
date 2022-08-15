@@ -25,11 +25,15 @@ def price(ticker : str):
 
 
 @app.route("/moneda/<ticker>")
-def moneda(ticker : str):   
+def moneda(ticker : str):  
     url = f"https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol={ticker}&to_symbol=USD&interval=5min&apikey=demo"
     r = requests.get(url)
     result =r.json()
-    return result
+    #price = result['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw']
+    simbolo = result['Meta Data']['2. From Symbol']
+    price = result['Time Series FX (5min)']['2022-08-15 04:00:00']['1. open']
+    #df=pd.DataFrame(price["2022-08-12 13:40:00"])
+    return simbolo  +" precio actual "+ price
 
 
 
