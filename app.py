@@ -31,7 +31,7 @@ def moneda(ticker : str):
     result =r.json()
     #price = result['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw']
     simbolo = result['Meta Data']['2. From Symbol']
-    price = result['Time Series FX (5min)']['2022-08-15 04:00:00']['1. open']
+    price = result['Time Series FX (5min)']['2022-08-16 00:00:00']['1. open']
     #df=pd.DataFrame(price["2022-08-12 13:40:00"])
     return simbolo  +" precio actual "+ price
 
